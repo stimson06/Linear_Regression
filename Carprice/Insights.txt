@@ -1,0 +1,9 @@
+INSIGTHS 
+ 
+Data Visualization:
+
+Negative Coreleation - citympg, highwaympg
+Positive Coreleation - horsepower, enginesize, curbweight
+Outliers -Countable number of outliers are present
+Most Used type - Sedan 
+Compression Ratio - great difference between diesel and gas 
