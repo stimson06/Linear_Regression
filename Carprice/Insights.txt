@@ -13,3 +13,4 @@ enginetype --> 'ohc' is widely used
 fuelsystem --> 'mpfi' system has the majority and 'spfi','mfi' has been fiited in least models
 cylinders --> four are maximum used among all the other models
 
+The accuracy of the model is : 91%
