@@ -67,8 +67,14 @@ def Label_Encoder(data,col_categorical):
         data[col]=encoder.fit_transform(data[col])
     return data        
 
-#def Model(data):
-    
+def Model(data):
+    X=data.drop(columns="price")
+    Y=data["price"]
+    X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2,random_state=601)
+    Dtree=DecisionTreeRegressor(random_state=7)
+    Dtree.fit(X_train,Y_train)
+    Y_pred=Dtree.predict(X_test)
+    print("R-squared (accuracy):", r2_score(Y_pred, Y_test))  
 
 
 FilePath="./Data/CarPrice.csv"
@@ -90,11 +96,5 @@ if(Requirement=="y"):
 
 Visualization(data,col_categorical)
 Label_Encoder(data,col_categorical)
+Model(data)
 
-X=data.drop(columns="price")
-Y=data["price"]
-X_train,X_test,Y_train,Y_test=train_test_split(X,Y,test_size=0.2,random_state=601)
-Dtree=DecisionTreeRegressor(random_state=7)
-Dtree.fit(X_train,Y_train)
-Y_pred=Dtree.predict(X_test)
-print("R-squared (accuracy):", r2_score(Y_pred, Y_test))
